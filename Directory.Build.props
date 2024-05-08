@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project>
+
+  <PropertyGroup>
+    <Authors>Sharemee</Authors>
+    <Copyright>Copyright © Sharemee 2024</Copyright>
+    <LangVersion>latest</LangVersion>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <AssemblyName>$(Authors).$(MSBuildProjectName)</AssemblyName>
+    <RootNamespace>$(Authors).$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
+    <AssemblyVersion>$(VersionPrefix)</AssemblyVersion>
+    <FileVersion>$(VersionPrefix)</FileVersion>
+    <RepositoryUrl>https://github.com/Sharemee/Sharemee.Toolkit.git</RepositoryUrl>
+  </PropertyGroup>
+
+  <!-- Custom Property -->
+  <PropertyGroup>
+    <RepositoryDirectory>$(MSBuildThisFileDirectory)</RepositoryDirectory>
+    <BuildDirectory>$(RepositoryDirectory)build\</BuildDirectory>
+    <MsgLogFile>$(BuildDirectory)$(AssemblyName)\build.log</MsgLogFile>
+    <NowTime>$([System.DateTime]::Now)</NowTime>
+    <BeforeTargets>Pack</BeforeTargets>
+  </PropertyGroup>
+
+  <!-- Package Configuration -->
+  <PropertyGroup>
+    <PackageId>$(AssemblyName)</PackageId>
+    <Description>Record some code.</Description>
+    <PackageTags>Sharemee,</PackageTags>
+    <PackAsTool>false</PackAsTool>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageOutputPath>$(BuildDirectory)$(AssemblyName)</PackageOutputPath>
+    <PackageProjectUrl>$(RepositoryUrl)</PackageProjectUrl>
+  </PropertyGroup>
+
+  <!-- Config README.md file source -->
+  <Choose>
+    <When Condition="Exists('README.md')">
+      <ItemGroup>
+        <None Include="README.md" Pack="true" PackagePath="" />
+      </ItemGroup>
+    </When>
+    <Otherwise>
+      <ItemGroup>
+        <None Condition="Exists('$(RepositoryDirectory)README.md')" Include="$(RepositoryDirectory)README.md" Pack="true" PackagePath="" />
+      </ItemGroup>
+    </Otherwise>
+  </Choose>
+
+  <!-- Config LICENSE file source -->
+  <Choose>
+    <When Condition="Exists('LICENSE')">
+      <ItemGroup>
+        <None Include="LICENSE" Pack="true" PackagePath="" />
+      </ItemGroup>
+    </When>
+    <Otherwise>
+      <ItemGroup>
+        <None Condition="Exists('$(RepositoryDirectory)LICENSE')" Include="$(RepositoryDirectory)LICENSE" Pack="true" PackagePath="" />
+      </ItemGroup>
+    </Otherwise>
+  </Choose>
+
+  <!-- Test property value for study way -->
+  <Target Name="Test" BeforeTargets="$(BeforeTargets)">
+    <Message Importance="high" Text="AssemblyName: $(AssemblyName)" />
+    <Message Importance="high" Text="RootNamespace: $(RootNamespace)" />
+    <WriteLinesToFile File="$(MsgLogFile)" Lines="--------------------------------------------------------------------------------" />
+    <WriteLinesToFile File="$(MsgLogFile)" Lines="$(NowTime) [$(Configuration)] BeforeTargets: $(BeforeTargets)" />
+    <WriteLinesToFile File="$(MsgLogFile)" Lines="$(NowTime) [$(Configuration)] MsgLogFile: $(MsgLogFile)" />
+    <WriteLinesToFile File="$(MsgLogFile)" Lines="$(NowTime) [$(Configuration)] ProjectGuid: $(ProjectGuid)" />
+    <WriteLinesToFile File="$(MsgLogFile)" Lines="$(NowTime) [$(Configuration)] ProjectName: $(ProjectName)" />
+    <WriteLinesToFile File="$(MsgLogFile)" Lines="$(NowTime) [$(Configuration)] MSBuildProjectName: $(MSBuildProjectName)" />
+    <WriteLinesToFile File="$(MsgLogFile)" Lines="$(NowTime) [$(Configuration)] AssemblyName: $(AssemblyName)" />
+    <WriteLinesToFile File="$(MsgLogFile)" Lines="$(NowTime) [$(Configuration)] RootNamespace: $(RootNamespace)" />
+    <WriteLinesToFile File="$(MsgLogFile)" Lines="$(NowTime) [$(Configuration)] PlatformTarget: $(PlatformTarget)" />
+    <WriteLinesToFile File="$(MsgLogFile)" Lines="$(NowTime) [$(Configuration)] RepositoryUrl: $(RepositoryUrl)" />
+    <WriteLinesToFile File="$(MsgLogFile)" Lines="$(NowTime) [$(Configuration)] PackageId: $(PackageId)" />
+    <WriteLinesToFile File="$(MsgLogFile)" Lines="$(NowTime) [$(Configuration)] PackageTags: $(PackageTags)" />
+    <WriteLinesToFile File="$(MsgLogFile)" Lines="$(NowTime) [$(Configuration)] Platform: $(Platform)" />
+    <WriteLinesToFile File="$(MsgLogFile)" Lines="$(NowTime) [$(Configuration)] PlatformID: $(PlatformID)" />
+    <WriteLinesToFile File="$(MsgLogFile)" Lines="$(NowTime) [$(Configuration)] PlatformName: $(PlatformName)" />
+    <WriteLinesToFile File="$(MsgLogFile)" Lines="$(NowTime) [$(Configuration)] PlatformTarget: $(PlatformTarget)" />
+    <WriteLinesToFile File="$(MsgLogFile)" Lines="$(NowTime) [$(Configuration)] Version: $(Version)" />
+    <WriteLinesToFile File="$(MsgLogFile)" Lines="$(NowTime) [$(Configuration)] VersionPrefix: $(VersionPrefix)" />
+    <WriteLinesToFile File="$(MsgLogFile)" Lines="$(NowTime) [$(Configuration)] AssemblyVersion: $(AssemblyVersion)" />
+    <WriteLinesToFile File="$(MsgLogFile)" Lines="$(NowTime) [$(Configuration)] FileVersion: $(FileVersion)" />
+    <WriteLinesToFile File="$(MsgLogFile)" Lines="$(NowTime) [$(Configuration)] Optimize: $(Optimize)" />
+    <WriteLinesToFile Condition="Exists('LICENSE')" File="$(MsgLogFile)" Lines="$(NowTime) [$(Configuration)] Exists LICENSE file" />
+  </Target>
+</Project>

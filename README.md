@@ -1,0 +1,3 @@
+# Sharemee.Toolkit
+
+Developer toolkit

@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFrameworks>net8.0;net6.0;netstandard2.0;netstandard2.1;</TargetFrameworks>
-    <VersionPrefix>0.0.0.1</VersionPrefix>
+    <VersionPrefix>0.0.0.4</VersionPrefix>
     <VersionSuffix>alpha</VersionSuffix>
     <PackageOutputPath>V:\LocalNuget\$(AssemblyName)</PackageOutputPath>
   </PropertyGroup>
@@ -27,6 +27,7 @@
   <!-- Project: Toolkit.Repository.EntityFramework -->
   <ItemGroup Condition="'$(TargetFramework)' == 'net8.0'">
     <Compile Include="..\ToolKit.Repository.EntityFramework\Repository.cs" Link="Repository\EntityFramework\Repository.cs" />
+    <Compile Include="..\ToolKit.Repository.EntityFramework\ServiceCollectionExtension.cs" Link="Repository\EntityFramework\ServiceCollectionExtension.cs" />
     <Compile Include="..\ToolKit.Repository.EntityFramework\Abstractions\RepositoryBase.cs" Link="Repository\EntityFramework\Abstractions\RepositoryBase.cs" />
   </ItemGroup>
 

@@ -1,5 +1,4 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using Sharemee.Blog.Repository.EntityFramework;
 using Sharemee.ToolKit.Repository.Abstractions;
 
 namespace Sharemee.Toolkit.Repository.EntityFramework;

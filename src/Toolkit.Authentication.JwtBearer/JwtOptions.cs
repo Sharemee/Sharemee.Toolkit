@@ -1,6 +1,4 @@
-﻿using Microsoft.IdentityModel.Tokens;
-
-namespace Sharemee.Toolkit.Authentication.JwtBearer;
+﻿namespace Sharemee.Toolkit.Authentication.JwtBearer;
 
 public class JwtOptions
 {

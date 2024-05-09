@@ -9,6 +9,7 @@
     <Import_RootNamespace>Toolkit.Share</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)DateTimeExtension.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ThrowHelper.cs" />
   </ItemGroup>
 </Project>

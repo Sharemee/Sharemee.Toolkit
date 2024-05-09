@@ -1,11 +1,12 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
+    <TargetFrameworks>net8.0;net6.0;</TargetFrameworks>
   </PropertyGroup>
-
+  
   <ItemGroup>
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.4" />
+    <PackageReference Condition="'$(TargetFramework)' == 'net6.0'" Include="Microsoft.EntityFrameworkCore" Version="7.0.18" />
+    <PackageReference Condition="'$(TargetFramework)' == 'net8.0'" Include="Microsoft.EntityFrameworkCore" Version="8.0.4" />
   </ItemGroup>
 
   <ItemGroup>

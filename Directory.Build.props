@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project>
 
+  <Import Project="CustomProperty.props"/>
+
+  <PropertyGroup>
+    <TargetFrameworks>net8.0;net6.0;netstandard2.1;netstandard2.0;</TargetFrameworks>
+  </PropertyGroup>
+  
   <PropertyGroup>
     <Authors>Sharemee</Authors>
     <Copyright>Copyright © Sharemee 2024</Copyright>
     <LangVersion>latest</LangVersion>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <GenerateDocumentationFile>True</GenerateDocumentationFile>
   </PropertyGroup>
 
   <PropertyGroup>
@@ -16,15 +21,6 @@
     <AssemblyVersion>$(VersionPrefix)</AssemblyVersion>
     <FileVersion>$(VersionPrefix)</FileVersion>
     <RepositoryUrl>https://github.com/Sharemee/Sharemee.Toolkit.git</RepositoryUrl>
-  </PropertyGroup>
-
-  <!-- Custom Property -->
-  <PropertyGroup>
-    <RepositoryDirectory>$(MSBuildThisFileDirectory)</RepositoryDirectory>
-    <BuildDirectory>$(RepositoryDirectory)build\</BuildDirectory>
-    <MsgLogFile>$(BuildDirectory)$(AssemblyName)\build.log</MsgLogFile>
-    <NowTime>$([System.DateTime]::Now)</NowTime>
-    <BeforeTargets>Pack</BeforeTargets>
   </PropertyGroup>
 
   <!-- Package Configuration -->
@@ -37,6 +33,7 @@
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageOutputPath>$(BuildDirectory)$(AssemblyName)</PackageOutputPath>
     <PackageProjectUrl>$(RepositoryUrl)</PackageProjectUrl>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
   </PropertyGroup>
 
   <!-- Config README.md file source -->
@@ -71,6 +68,7 @@
   <Target Name="Test" BeforeTargets="$(BeforeTargets)">
     <Message Importance="high" Text="AssemblyName: $(AssemblyName)" />
     <Message Importance="high" Text="RootNamespace: $(RootNamespace)" />
+    <Message Importance="high" Text="SolutionDir: $(SolutionDir)" />
     <WriteLinesToFile File="$(MsgLogFile)" Lines="--------------------------------------------------------------------------------" />
     <WriteLinesToFile File="$(MsgLogFile)" Lines="$(NowTime) [$(Configuration)] BeforeTargets: $(BeforeTargets)" />
     <WriteLinesToFile File="$(MsgLogFile)" Lines="$(NowTime) [$(Configuration)] MsgLogFile: $(MsgLogFile)" />

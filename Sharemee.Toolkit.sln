@@ -7,7 +7,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".SolutionItems", ".Solution
 	ProjectSection(SolutionItems) = preProject
 		.gitattributes = .gitattributes
 		.gitignore = .gitignore
+		CustomProperty.props = CustomProperty.props
 		Directory.Build.props = Directory.Build.props
+		global.json = global.json
 		LICENSE = LICENSE
 		README.md = README.md
 	EndProjectSection
@@ -21,6 +23,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToolKit.Repository.Abstractions", "src\ToolKit.Repository.Abstractions\ToolKit.Repository.Abstractions.csproj", "{76811D2C-F4DA-4FCC-A5C8-07958598D59F}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Toolkit.Repository.EntityFramework", "src\Toolkit.Repository.EntityFramework\Toolkit.Repository.EntityFramework.csproj", "{677BD24C-65CA-4B67-87AE-1E3BD2A54027}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Toolkit.Share", "src\Toolkit.Share\Toolkit.Share.shproj", "{942BA5BB-45AF-44A8-A057-A62B98140E87}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -125,8 +129,14 @@ Global
 		{231A7D93-F7DF-4FB1-BA1A-C546D1AAAF33} = {0ED0A49E-C103-4020-BECF-32E8B96796CC}
 		{76811D2C-F4DA-4FCC-A5C8-07958598D59F} = {0ED0A49E-C103-4020-BECF-32E8B96796CC}
 		{677BD24C-65CA-4B67-87AE-1E3BD2A54027} = {0ED0A49E-C103-4020-BECF-32E8B96796CC}
+		{942BA5BB-45AF-44A8-A057-A62B98140E87} = {0ED0A49E-C103-4020-BECF-32E8B96796CC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {104C902C-DD50-456C-8865-E402B5B4CD42}
+	EndGlobalSection
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		src\Toolkit.Share\Toolkit.Share.projitems*{231a7d93-f7df-4fb1-ba1a-c546d1aaaf33}*SharedItemsImports = 5
+		src\Toolkit.Share\Toolkit.Share.projitems*{5e3a5161-a404-4b70-9566-9286e08cce77}*SharedItemsImports = 5
+		src\Toolkit.Share\Toolkit.Share.projitems*{942ba5bb-45af-44a8-a057-a62b98140e87}*SharedItemsImports = 13
 	EndGlobalSection
 EndGlobal

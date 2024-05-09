@@ -1,7 +1,10 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
+  <Import Project="..\Toolkit.Share\Toolkit.Share.projitems" Label="Shared" />
+
+  <Import Project="CompileIncludes.props" />
+  
   <PropertyGroup>
-    <TargetFrameworks>net8.0;net6.0;netstandard2.0;netstandard2.1;</TargetFrameworks>
     <VersionPrefix>0.0.0.4</VersionPrefix>
     <VersionSuffix>alpha</VersionSuffix>
     <PackageOutputPath>V:\LocalNuget\$(AssemblyName)</PackageOutputPath>
@@ -9,26 +12,11 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Compile Include="..\Toolkit.Authentication.JwtBearer\JwtOptions.cs" Link="Authentication\JwtBearer\JwtOptions.cs" />
-    
-    <!-- Project: ToolKit.Repository.Abstractions -->
-    <Compile Include="..\ToolKit.Repository.Abstractions\IRepository.cs" Link="Repository\Abstractions\IRepository.cs" />
-    <Compile Include="..\ToolKit.Repository.Abstractions\IRepositoryAsync.cs" Link="Repository\Abstractions\IRepositoryAsync.cs" />
-
+    <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="7.5.1" />
   </ItemGroup>
 
   <ItemGroup Condition="'$(TargetFramework)' == 'net8.0'">
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.4" />
-  </ItemGroup>
-  
-  <!-- Project: Toolkit.Repository.EntityFramework -->
-  <ItemGroup Condition="'$(TargetFramework)' == 'net8.0'">
-    <Compile Include="..\ToolKit.Repository.EntityFramework\Repository.cs" Link="Repository\EntityFramework\Repository.cs" />
-    <Compile Include="..\ToolKit.Repository.EntityFramework\ServiceCollectionExtension.cs" Link="Repository\EntityFramework\ServiceCollectionExtension.cs" />
-    <Compile Include="..\ToolKit.Repository.EntityFramework\Abstractions\RepositoryBase.cs" Link="Repository\EntityFramework\Abstractions\RepositoryBase.cs" />
   </ItemGroup>
 
 </Project>

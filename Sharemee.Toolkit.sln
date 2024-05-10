@@ -20,7 +20,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Toolkit", "src\Toolkit\Tool
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Toolkit.Authentication.JwtBearer", "src\Toolkit.Authentication.JwtBearer\Toolkit.Authentication.JwtBearer.csproj", "{231A7D93-F7DF-4FB1-BA1A-C546D1AAAF33}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToolKit.Repository.Abstractions", "src\ToolKit.Repository.Abstractions\ToolKit.Repository.Abstractions.csproj", "{76811D2C-F4DA-4FCC-A5C8-07958598D59F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Toolkit.Repository.Abstractions", "src\Toolkit.Repository.Abstractions\Toolkit.Repository.Abstractions.csproj", "{76811D2C-F4DA-4FCC-A5C8-07958598D59F}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Toolkit.Repository.EntityFramework", "src\Toolkit.Repository.EntityFramework\Toolkit.Repository.EntityFramework.csproj", "{677BD24C-65CA-4B67-87AE-1E3BD2A54027}"
 EndProject

@@ -10,7 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ToolKit.Repository.Abstractions\ToolKit.Repository.Abstractions.csproj" />
+    <ProjectReference Include="..\ToolKit.Repository.Abstractions\Toolkit.Repository.Abstractions.csproj" />
   </ItemGroup>
 
 </Project>

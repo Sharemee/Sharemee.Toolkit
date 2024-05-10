@@ -38,9 +38,10 @@ public static class JwtOptionsExtension
             // 设置是否验证 Token 生命周期
             ValidateLifetime = options.ValidateLifetime,
 
-            // 过期时间容错值
+            // 设置时钟脉冲相位差
             ClockSkew = TimeSpan.FromSeconds(options.ClockSkew),
 
+            // 设置 Token 是否必须具有过期时间
             RequireExpirationTime = options.RequireExpirationTime,
         };
     }

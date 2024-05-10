@@ -1,3 +1,4 @@
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 
 namespace Sharemee.Toolkit;
@@ -10,7 +11,11 @@ public static class ThrowHelper
     /// <summary>
     /// Throws an <see cref="ArgumentNullException"/> if <paramref name="argument"/> is null.
     /// </summary>
-    public static void ThrowIfNull(object? argument,
+    public static void ThrowIfNull(
+#if !NETSTANDARD2_0
+        [NotNull]
+#endif
+        object? argument,
 #if !NETSTANDARD
         [CallerArgumentExpression(nameof(argument))]
 #endif

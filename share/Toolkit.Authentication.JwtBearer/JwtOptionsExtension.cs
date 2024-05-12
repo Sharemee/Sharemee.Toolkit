@@ -9,7 +9,7 @@ namespace Sharemee.Toolkit.Authentication.JwtBearer;
 public static class JwtOptionsExtension
 {
     /// <summary>
-    /// Bind user <see cref="JwtOptions"/> to <see cref="TokenValidationParameters"/>
+    /// Bind <see cref="JwtOptions"/> to <see cref="TokenValidationParameters"/>
     /// </summary>
     /// <param name="options"></param>
     /// <returns></returns>

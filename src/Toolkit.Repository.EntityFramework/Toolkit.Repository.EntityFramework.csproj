@@ -13,4 +13,6 @@
     <ProjectReference Include="..\ToolKit.Repository.Abstractions\Toolkit.Repository.Abstractions.csproj" />
   </ItemGroup>
 
+  <Import Project="..\..\share\Toolkit.Repository.EntityFramework\Toolkit.Repository.EntityFramework.projitems" Label="Shared" />
+
 </Project>

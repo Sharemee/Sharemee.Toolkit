@@ -24,9 +24,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Toolkit.Repository.Abstract
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Toolkit.Repository.EntityFramework", "src\Toolkit.Repository.EntityFramework\Toolkit.Repository.EntityFramework.csproj", "{677BD24C-65CA-4B67-87AE-1E3BD2A54027}"
 EndProject
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Toolkit.Share", "src\Toolkit.Share\Toolkit.Share.shproj", "{942BA5BB-45AF-44A8-A057-A62B98140E87}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Toolkit.Encryption", "src\Toolkit.Encryption\Toolkit.Encryption.csproj", "{D4B94E05-C39E-43D0-93BC-67B97D8151D4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "share", "share", "{2999C76F-917F-4414-8748-B9D71E44ABED}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Toolkit.Encryption", "share\Toolkit.Encryption\Toolkit.Encryption.shproj", "{860D6A98-C539-4EE3-951A-AE5D11498458}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Toolkit.Authentication.JwtBearer", "share\Toolkit.Authentication.JwtBearer\Toolkit.Authentication.JwtBearer.shproj", "{55CB2E82-4D21-4018-AE61-CBE074B3F758}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Toolkit.Repository.Abstractions", "share\Toolkit.Repository.Abstractions\Toolkit.Repository.Abstractions.shproj", "{326F14A8-0BD3-4759-B355-18C606C329A8}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Toolkit.Repository.EntityFramework", "share\Toolkit.Repository.EntityFramework\Toolkit.Repository.EntityFramework.shproj", "{E55629FE-272E-4D14-B997-8F5AF8DCB75A}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Toolkit.Share", "share\Toolkit.Share\Toolkit.Share.shproj", "{9B0745AE-DD7C-45DC-A13D-7DF8C3BB80A8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -151,15 +161,29 @@ Global
 		{231A7D93-F7DF-4FB1-BA1A-C546D1AAAF33} = {0ED0A49E-C103-4020-BECF-32E8B96796CC}
 		{76811D2C-F4DA-4FCC-A5C8-07958598D59F} = {0ED0A49E-C103-4020-BECF-32E8B96796CC}
 		{677BD24C-65CA-4B67-87AE-1E3BD2A54027} = {0ED0A49E-C103-4020-BECF-32E8B96796CC}
-		{942BA5BB-45AF-44A8-A057-A62B98140E87} = {0ED0A49E-C103-4020-BECF-32E8B96796CC}
 		{D4B94E05-C39E-43D0-93BC-67B97D8151D4} = {0ED0A49E-C103-4020-BECF-32E8B96796CC}
+		{860D6A98-C539-4EE3-951A-AE5D11498458} = {2999C76F-917F-4414-8748-B9D71E44ABED}
+		{55CB2E82-4D21-4018-AE61-CBE074B3F758} = {2999C76F-917F-4414-8748-B9D71E44ABED}
+		{326F14A8-0BD3-4759-B355-18C606C329A8} = {2999C76F-917F-4414-8748-B9D71E44ABED}
+		{E55629FE-272E-4D14-B997-8F5AF8DCB75A} = {2999C76F-917F-4414-8748-B9D71E44ABED}
+		{9B0745AE-DD7C-45DC-A13D-7DF8C3BB80A8} = {2999C76F-917F-4414-8748-B9D71E44ABED}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {104C902C-DD50-456C-8865-E402B5B4CD42}
 	EndGlobalSection
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
-		src\Toolkit.Share\Toolkit.Share.projitems*{231a7d93-f7df-4fb1-ba1a-c546d1aaaf33}*SharedItemsImports = 5
-		src\Toolkit.Share\Toolkit.Share.projitems*{5e3a5161-a404-4b70-9566-9286e08cce77}*SharedItemsImports = 5
-		src\Toolkit.Share\Toolkit.Share.projitems*{942ba5bb-45af-44a8-a057-a62b98140e87}*SharedItemsImports = 13
+		share\Toolkit.Authentication.JwtBearer\Toolkit.Authentication.JwtBearer.projitems*{231a7d93-f7df-4fb1-ba1a-c546d1aaaf33}*SharedItemsImports = 5
+		share\Toolkit.Share\Toolkit.Share.projitems*{231a7d93-f7df-4fb1-ba1a-c546d1aaaf33}*SharedItemsImports = 5
+		share\Toolkit.Repository.Abstractions\Toolkit.Repository.Abstractions.projitems*{326f14a8-0bd3-4759-b355-18c606c329a8}*SharedItemsImports = 13
+		share\Toolkit.Authentication.JwtBearer\Toolkit.Authentication.JwtBearer.projitems*{55cb2e82-4d21-4018-ae61-cbe074b3f758}*SharedItemsImports = 13
+		share\Toolkit.Authentication.JwtBearer\Toolkit.Authentication.JwtBearer.projitems*{5e3a5161-a404-4b70-9566-9286e08cce77}*SharedItemsImports = 5
+		share\Toolkit.Encryption\Toolkit.Encryption.projitems*{5e3a5161-a404-4b70-9566-9286e08cce77}*SharedItemsImports = 5
+		share\Toolkit.Share\Toolkit.Share.projitems*{5e3a5161-a404-4b70-9566-9286e08cce77}*SharedItemsImports = 5
+		share\Toolkit.Repository.EntityFramework\Toolkit.Repository.EntityFramework.projitems*{677bd24c-65ca-4b67-87ae-1e3bd2a54027}*SharedItemsImports = 5
+		share\Toolkit.Repository.Abstractions\Toolkit.Repository.Abstractions.projitems*{76811d2c-f4da-4fcc-a5c8-07958598d59f}*SharedItemsImports = 5
+		share\Toolkit.Encryption\Toolkit.Encryption.projitems*{860d6a98-c539-4ee3-951a-ae5d11498458}*SharedItemsImports = 13
+		share\Toolkit.Share\Toolkit.Share.projitems*{9b0745ae-dd7c-45dc-a13d-7df8c3bb80a8}*SharedItemsImports = 13
+		share\Toolkit.Encryption\Toolkit.Encryption.projitems*{d4b94e05-c39e-43d0-93bc-67b97d8151d4}*SharedItemsImports = 5
+		share\Toolkit.Repository.EntityFramework\Toolkit.Repository.EntityFramework.projitems*{e55629fe-272e-4d14-b997-8f5af8dcb75a}*SharedItemsImports = 13
 	EndGlobalSection
 EndGlobal

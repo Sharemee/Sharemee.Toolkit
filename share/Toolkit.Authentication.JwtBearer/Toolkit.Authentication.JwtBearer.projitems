@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects Condition="'$(MSBuildVersion)' == '' Or '$(MSBuildVersion)' &lt; '16.0'">$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>55cb2e82-4d21-4018-ae61-cbe074b3f758</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>Toolkit.Authentication.JwtBearer</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)IJwtBearerService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)JwtBearerHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)JwtBearerService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)JwtOptions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)JwtOptionsExtension.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ServiceCollectionExtension.cs" />
+  </ItemGroup>
+</Project>

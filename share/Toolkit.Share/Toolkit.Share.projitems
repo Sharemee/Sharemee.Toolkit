@@ -3,12 +3,13 @@
   <PropertyGroup>
     <MSBuildAllProjects Condition="'$(MSBuildVersion)' == '' Or '$(MSBuildVersion)' &lt; '16.0'">$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
     <HasSharedItems>true</HasSharedItems>
-    <SharedGUID>942ba5bb-45af-44a8-a057-a62b98140e87</SharedGUID>
+    <SharedGUID>9b0745ae-dd7c-45dc-a13d-7df8c3bb80a8</SharedGUID>
   </PropertyGroup>
   <PropertyGroup Label="Configuration">
-    <Import_RootNamespace>Toolkit.Share</Import_RootNamespace>
+    <Import_RootNamespace>Toolkit</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)CollectionsExtensions.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DateTimeExtension.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ThrowHelper.cs" />
   </ItemGroup>

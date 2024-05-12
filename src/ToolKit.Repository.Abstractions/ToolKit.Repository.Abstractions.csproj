@@ -4,4 +4,6 @@
     <PackageReference Condition="'$(TargetFramework)' == 'netstandard2.0'" Include="System.Threading.Tasks.Extensions" Version="4.5.4" />
   </ItemGroup>
   
+  <Import Project="..\..\share\Toolkit.Repository.Abstractions\Toolkit.Repository.Abstractions.projitems" Label="Shared" />
+  
 </Project>

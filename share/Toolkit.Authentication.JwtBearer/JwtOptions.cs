@@ -1,4 +1,6 @@
-﻿namespace Sharemee.Toolkit.Authentication.JwtBearer;
+﻿using Microsoft.IdentityModel.Tokens;
+
+namespace Sharemee.Toolkit.Authentication.JwtBearer;
 
 /// <summary>
 /// JWT Options
@@ -55,17 +57,23 @@ public class JwtOptions
     /// <summary>
     /// Token 是否必须具有过期(expiration)值
     /// </summary>
-    /// <remarks>Default value: <see langword="true"/></remarks>
+    /// <remarks>默认: <see langword="true"/></remarks>
     public bool RequireExpirationTime { get; set; } = true;
+
+    ///// <summary>
+    ///// 接受 Token 之前的时间
+    ///// </summary>
+    //public long? AcceptedBeforeTime { get; set; }
 
     /// <summary>
     /// Token 过期时间
     /// </summary>
+    /// <remarks>单位: 分钟</remarks>
     public long? ExpiredTime { get; set; }
 
-    ///// <summary>
-    ///// Token签名算法
-    ///// </summary>
-    ///// <remarks>Default value: <see cref="SecurityAlgorithms.HmacSha256"/></remarks>
-    //public string Algorithm { get; set; } = SecurityAlgorithms.HmacSha256;
+    /// <summary>
+    /// Token 签名算法
+    /// </summary>
+    /// <remarks>系统默认值: <see cref="SecurityAlgorithms.HmacSha256"/></remarks>
+    public string? Algorithm { get; set; }
 }

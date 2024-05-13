@@ -9,7 +9,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".SolutionItems", ".Solution
 		.gitignore = .gitignore
 		CustomProperty.props = CustomProperty.props
 		Directory.Build.props = Directory.Build.props
-		global.json = global.json
 		LICENSE = LICENSE
 		README.md = README.md
 	EndProjectSection
@@ -178,6 +177,8 @@ Global
 		share\Toolkit.Authentication.JwtBearer\Toolkit.Authentication.JwtBearer.projitems*{55cb2e82-4d21-4018-ae61-cbe074b3f758}*SharedItemsImports = 13
 		share\Toolkit.Authentication.JwtBearer\Toolkit.Authentication.JwtBearer.projitems*{5e3a5161-a404-4b70-9566-9286e08cce77}*SharedItemsImports = 5
 		share\Toolkit.Encryption\Toolkit.Encryption.projitems*{5e3a5161-a404-4b70-9566-9286e08cce77}*SharedItemsImports = 5
+		share\Toolkit.Repository.Abstractions\Toolkit.Repository.Abstractions.projitems*{5e3a5161-a404-4b70-9566-9286e08cce77}*SharedItemsImports = 5
+		share\Toolkit.Repository.EntityFramework\Toolkit.Repository.EntityFramework.projitems*{5e3a5161-a404-4b70-9566-9286e08cce77}*SharedItemsImports = 5
 		share\Toolkit.Share\Toolkit.Share.projitems*{5e3a5161-a404-4b70-9566-9286e08cce77}*SharedItemsImports = 5
 		share\Toolkit.Repository.EntityFramework\Toolkit.Repository.EntityFramework.projitems*{677bd24c-65ca-4b67-87ae-1e3bd2a54027}*SharedItemsImports = 5
 		share\Toolkit.Repository.Abstractions\Toolkit.Repository.Abstractions.projitems*{76811d2c-f4da-4fcc-a5c8-07958598d59f}*SharedItemsImports = 5

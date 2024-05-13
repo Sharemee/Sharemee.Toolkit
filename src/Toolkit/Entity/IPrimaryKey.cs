@@ -12,7 +12,7 @@ public interface IPrimaryKey
 }
 
 /// <summary>
-/// Primary key type: <see cref="TType"/>
+/// Primary key
 /// </summary>
 /// <typeparam name="TType"></typeparam>
 public interface IPrimaryKey<TType> where TType : IEquatable<TType>

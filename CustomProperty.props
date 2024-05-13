@@ -5,11 +5,11 @@
     <ProjectRoot>$([MSBuild]::NormalizeDirectory('$(MSBuildThisFileDirectory)', 'src'))</ProjectRoot>
     <RepositoryDirectory>$(MSBuildThisFileDirectory)</RepositoryDirectory>
     <BuildDirectory>$(RepositoryDirectory)build\</BuildDirectory>
-    <MsgLogFile>$(BuildDirectory)$(AssemblyName)\build.log</MsgLogFile>
+    <MsgLogFile>$(BuildDirectory)logs\$(MSBuildProjectName)-$(TargetFramework).log</MsgLogFile>
     <NowTime>$([System.DateTime]::Now)</NowTime>
-    
-    <BeforeTargets>Pack</BeforeTargets>
-    <!--<BeforeTargets>Build</BeforeTargets>-->
-  </PropertyGroup>
 
+    <!--<LogTargets>Pack</LogTargets>-->
+    <LogTargets>Build</LogTargets>
+  </PropertyGroup>
+  
 </Project>

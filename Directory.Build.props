@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project>
 
-  <Import Project="CustomProperty.props"/>
-
-  <PropertyGroup>
+  <!-- 这玩意不要写到这里来, 会报错, 可能是因为没有指定SDK导致这个属性依赖的其它属性找不到导致的 -->
+  <!--<PropertyGroup>
     <TargetFrameworks>net8.0;net6.0;netstandard2.1;netstandard2.0;</TargetFrameworks>
-  </PropertyGroup>
-  
+  </PropertyGroup>-->
+
   <PropertyGroup>
     <Authors>Sharemee</Authors>
     <Copyright>Copyright © Sharemee 2024</Copyright>
@@ -36,6 +35,9 @@
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
   </PropertyGroup>
 
+  <!-- 部分属性还未赋值, 因此放到属性最后面 -->
+  <Import Project="CustomProperty.props"/>
+
   <!-- Config README.md file source -->
   <Choose>
     <When Condition="Exists('README.md')">
@@ -64,17 +66,20 @@
     </Otherwise>
   </Choose>
 
-  <!-- Test property value for study way -->
-  <Target Name="Test" BeforeTargets="$(BeforeTargets)">
-    <Message Importance="high" Text="AssemblyName: $(AssemblyName)" />
-    <Message Importance="high" Text="RootNamespace: $(RootNamespace)" />
-    <Message Importance="high" Text="SolutionDir: $(SolutionDir)" />
+  <!-- 将属性值打印到日志, 这样你就知道这个值大概表示什么了 -->
+  <Target Condition="'$(TargetFramework)' != ''" Name="Test" BeforeTargets="$(LogTargets)">
+    <!--<Message Importance="high" Text="AssemblyName: $(AssemblyName)" />-->
+    <!--<Message Importance="high" Text="RootNamespace: $(RootNamespace)" />-->
+    <Message Importance="high" Text="TargetFramework: $(TargetFramework)" />
+    <Message Importance="high" Text="TargetFrameworkVersion: '$(TargetFrameworkVersion)'" />
     <WriteLinesToFile File="$(MsgLogFile)" Lines="--------------------------------------------------------------------------------" />
-    <WriteLinesToFile File="$(MsgLogFile)" Lines="$(NowTime) [$(Configuration)] BeforeTargets: $(BeforeTargets)" />
+    <WriteLinesToFile File="$(MsgLogFile)" Lines="$(NowTime) [$(Configuration)] LogTargets: $(LogTargets)" />
     <WriteLinesToFile File="$(MsgLogFile)" Lines="$(NowTime) [$(Configuration)] MsgLogFile: $(MsgLogFile)" />
+    <WriteLinesToFile File="$(MsgLogFile)" Lines="$(NowTime) [$(Configuration)] SolutionDir: $(SolutionDir)" />
     <WriteLinesToFile File="$(MsgLogFile)" Lines="$(NowTime) [$(Configuration)] ProjectGuid: $(ProjectGuid)" />
     <WriteLinesToFile File="$(MsgLogFile)" Lines="$(NowTime) [$(Configuration)] ProjectName: $(ProjectName)" />
     <WriteLinesToFile File="$(MsgLogFile)" Lines="$(NowTime) [$(Configuration)] MSBuildProjectName: $(MSBuildProjectName)" />
+    <WriteLinesToFile File="$(MsgLogFile)" Lines="$(NowTime) [$(Configuration)] ProjectPriFileName: $(ProjectPriFileName)" />
     <WriteLinesToFile File="$(MsgLogFile)" Lines="$(NowTime) [$(Configuration)] AssemblyName: $(AssemblyName)" />
     <WriteLinesToFile File="$(MsgLogFile)" Lines="$(NowTime) [$(Configuration)] RootNamespace: $(RootNamespace)" />
     <WriteLinesToFile File="$(MsgLogFile)" Lines="$(NowTime) [$(Configuration)] PlatformTarget: $(PlatformTarget)" />
@@ -90,6 +95,11 @@
     <WriteLinesToFile File="$(MsgLogFile)" Lines="$(NowTime) [$(Configuration)] AssemblyVersion: $(AssemblyVersion)" />
     <WriteLinesToFile File="$(MsgLogFile)" Lines="$(NowTime) [$(Configuration)] FileVersion: $(FileVersion)" />
     <WriteLinesToFile File="$(MsgLogFile)" Lines="$(NowTime) [$(Configuration)] Optimize: $(Optimize)" />
+    <WriteLinesToFile File="$(MsgLogFile)" Lines="$(NowTime) [$(Configuration)] TargetFramework: $(TargetFramework)" />
+    <WriteLinesToFile File="$(MsgLogFile)" Lines="$(NowTime) [$(Configuration)] TargetFrameworkVersion: $(TargetFrameworkVersion)" />
+    <WriteLinesToFile File="$(MsgLogFile)" Lines="$(NowTime) [$(Configuration)] RuntimeIdentifier: $(RuntimeIdentifier)" />
+    <WriteLinesToFile File="$(MsgLogFile)" Lines="$(NowTime) [$(Configuration)] RuntimeIdentifiers: $(RuntimeIdentifiers)" />
     <WriteLinesToFile Condition="Exists('LICENSE')" File="$(MsgLogFile)" Lines="$(NowTime) [$(Configuration)] Exists LICENSE file" />
   </Target>
+
 </Project>

@@ -1,23 +1,23 @@
 ﻿namespace Sharemee.Toolkit.Entity;
 
 /// <summary>
-/// Sortable type: <see cref="int"/>
+/// 可排序属性接口
 /// </summary>
 public interface ISortable
 {
     /// <summary>
-    /// Sort
+    /// 排序
     /// </summary>
     int Sort { get; set; }
 }
 
 /// <summary>
-/// Sortable type: <see cref="TType"/>
+/// 可排序属性泛型接口
 /// </summary>
 public interface ISortable<TType> where TType : IEquatable<TType>
 {
     /// <summary>
-    /// Sort
+    /// 排序
     /// </summary>
     TType Sort { get; set; }
 }

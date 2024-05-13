@@ -1,14 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿namespace Sharemee.Toolkit.Entity;
 
-namespace Sharemee.Toolkit.Entity;
-
+/// <summary>
+/// 可删除属性接口
+/// </summary>
 public interface IDeleteable
 {
     /// <summary>
-    /// Soft delete
+    /// 是否已删除
     /// </summary>
-    /// <remarks>If true is deleted</remarks>
+    /// <remarks>0: 未删除; 1: 已删除</remarks>
     bool IsDeleted { get; set; }
 }

@@ -1,12 +1,28 @@
 ﻿namespace Sharemee.Toolkit.IO;
 
+/// <summary>
+/// 
+/// </summary>
 public static class DirctoryInfoExtension
 {
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="dirctoryInfo"></param>
+    /// <param name="paths"></param>
+    /// <returns></returns>
     public static DirectoryInfo PathCombine(this DirectoryInfo dirctoryInfo, params string[] paths)
     {
         return PathCombine(dirctoryInfo, false, paths);
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="dirctoryInfo"></param>
+    /// <param name="ensureExists"></param>
+    /// <param name="paths"></param>
+    /// <returns></returns>
     public static DirectoryInfo PathCombine(this DirectoryInfo dirctoryInfo, bool ensureExists = false, params string[] paths)
     {
         if (paths is null || paths.Length == 0)
@@ -36,12 +52,25 @@ public static class DirctoryInfoExtension
         return true;
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="dirctoryPath"></param>
+    /// <param name="ensureExists"></param>
+    /// <returns></returns>
     private static DirectoryInfo EnsureDirectoryExists(string dirctoryPath, bool ensureExists)
     {
         DirectoryInfo di = new(dirctoryPath);
         return EnsureDirectoryExists(di, ensureExists);
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="dirctoryInfo"></param>
+    /// <param name="ensureExists"></param>
+    /// <returns></returns>
+    /// <exception cref="IOException"></exception>
     private static DirectoryInfo EnsureDirectoryExists(DirectoryInfo dirctoryInfo, bool ensureExists)
     {
         if (ensureExists && !dirctoryInfo.Exists)

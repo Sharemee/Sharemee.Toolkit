@@ -3,6 +3,9 @@ using System.Text;
 
 namespace Sharemee.Toolkit.IO;
 
+/// <summary>
+/// 命令行字符串扩展类
+/// </summary>
 public static class CommandLineStringExtension
 {
     /// <summary>

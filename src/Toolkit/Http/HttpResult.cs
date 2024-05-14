@@ -3,41 +3,84 @@
 /// <summary>
 /// Http 响应数据模型
 /// </summary>
-public class HttpResult
+public partial class HttpResult
 {
-    /// <summary>
-    /// 服务端返回的请求处理状态
-    /// </summary>
-    /// <remarks>
-    /// 值对应的请求状态可以自定义, 不限于以下列出的一种示例:
-    /// <list type="bullet">
-    ///     <item>0: 请求处理成功</item>
-    ///     <item>1: 请求处理失败</item>
-    /// </list>
-    /// </remarks>
-    public int Code { get; set; }
+    #region Properties
 
     /// <summary>
-    /// 服务端返回的消息
+    /// 代码
     /// </summary>
+    /// <remarks>默认: 0</remarks>
+    public int Code { get; set; } = 0;
+
+    /// <summary>
+    /// 状态
+    /// </summary>
+    /// <remarks>
+    /// <list type="bullet">
+    ///   <item><see langword="true"/>: 表示成功</item>
+    ///   <item><see langword="false"/>: 表示失败</item>
+    ///   <item>默认: <see langword="false"/></item>
+    /// </list>
+    /// </remarks>
+    public bool Status { get; set; } = false;
+
+    /// <summary>
+    /// 消息
+    /// </summary>
+    /// <remarks>默认: <see cref="string.Empty"/></remarks>
     public string Message { get; set; } = string.Empty;
 
     /// <summary>
-    /// 服务端返回的数据
+    /// 数据
     /// </summary>
-    public object? Data { get; set; }
+    /// <remarks>默认: <see langword="null"/></remarks>
+    public virtual object? Data { get; set; } = null;
 
     /// <summary>
     /// 时间戳
     /// </summary>
     public long Timestamp { get; set; } = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
-}
 
-/// <inheritdoc/>
-public class HttpResult<T> : HttpResult
-{
+    #endregion
+
+    #region Constructor
+
     /// <summary>
-    /// 服务端返回的数据
+    /// 构造函数
     /// </summary>
-    public new T? Data { get; set; }
+    public HttpResult() { }
+
+    /// <summary>
+    /// 构造函数
+    /// </summary>
+    /// <param name="code">代码</param>
+    /// <param name="status">状态</param>
+    /// <param name="message">消息</param>
+    /// <param name="data">数据</param>
+    /// <param name="timestamp">时间戳</param>
+    public HttpResult(int code, bool status, string message, object? data = null, long? timestamp = null)
+    {
+        Code = code;
+        Status = status;
+        Message = message;
+        Data = data;
+        Timestamp = timestamp ?? DateTimeOffset.UtcNow.ToUnixTimeSeconds();
+    }
+
+    #endregion
+
+    /// <summary>
+    /// 静态构建 <see cref="HttpResult"/> 实例的方法
+    /// </summary>
+    /// <param name="code">代码</param>
+    /// <param name="status">状态</param>
+    /// <param name="message">消息</param>
+    /// <param name="data">数据</param>
+    /// <param name="timestamp">时间戳</param>
+    /// <returns></returns>
+    public static HttpResult Build(int code, bool status, string message, object? data = null, long? timestamp = null)
+    {
+        return new HttpResult(code, status, message, data, timestamp);
+    }
 }

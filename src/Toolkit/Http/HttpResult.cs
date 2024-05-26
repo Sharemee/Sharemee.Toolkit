@@ -5,6 +5,27 @@
 /// </summary>
 public partial class HttpResult
 {
+    #region Constant
+
+    /// <summary>
+    /// 默认成功代码: 0
+    /// </summary>
+    public const int DefaultSuccessCode = 0;
+    /// <summary>
+    /// 默认成功消息: Success
+    /// </summary>
+    public const string DefaultSuccessMessage = "Success";
+    /// <summary>
+    /// 默认失败代码: 1
+    /// </summary>
+    public const int DefaultFailureCode = 1;
+    /// <summary>
+    /// 默认失败消息: Failure
+    /// </summary>
+    public const string DefaultFailureMessage = "Failure";
+
+    #endregion
+
     #region Properties
 
     /// <summary>

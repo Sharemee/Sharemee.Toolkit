@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Sharemee.Toolkit.IO;
+﻿namespace Sharemee.Toolkit.IO;
 
 /// <summary>
 /// 路径字符串扩展类

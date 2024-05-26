@@ -1,7 +1,7 @@
 ﻿namespace Sharemee.Toolkit.Entity;
 
 /// <summary>
-/// 
+/// 可用性标识字段接口
 /// </summary>
 public interface IAvailability
 {

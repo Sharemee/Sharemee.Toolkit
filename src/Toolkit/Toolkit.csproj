@@ -2,9 +2,8 @@
 
   <PropertyGroup>
     <TargetFrameworks>net8.0;net6.0;netstandard2.1;netstandard2.0</TargetFrameworks>
-    <VersionPrefix>0.0.0.11</VersionPrefix>
+    <VersionPrefix>0.0.0.13</VersionPrefix>
     <VersionSuffix>alpha</VersionSuffix>
-    <PackageOutputPath>V:\LocalNuget\$(AssemblyName)</PackageOutputPath>
   </PropertyGroup>
 
   <ItemGroup>
@@ -12,9 +11,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="Http\HttpResult.*.cs">
-      <DependentUpon>Http\HttpResult.cs</DependentUpon>
+    <None Include=".\Http\HttpResult.*.cs">
+      <DependentUpon>.\Http\HttpResult.cs</DependentUpon>
     </None>
+    <Compile Remove="Http\HttpResultExtensions.cs" Condition="$(TargetFramework.StartsWith('netstandard'))"/>
   </ItemGroup>
 
   <!-- Import Project: Toolkit -->
@@ -24,9 +24,7 @@
   <Import Project="..\..\share\Toolkit.Encryption\Toolkit.Encryption.projitems" Label="Shared" />
 
   <!-- Import Project: Toolkit.Authentication.JwtBearer-->
-  <Import Condition="'$(TargetFramework)' == 'net8.0' or '$(TargetFramework)' == 'net6.0'"
-          Project="..\..\share\Toolkit.Authentication.JwtBearer\Toolkit.Authentication.JwtBearer.projitems"
-          Label="Shared" />
+  <Import Condition="'$(TargetFramework)' == 'net8.0' or '$(TargetFramework)' == 'net6.0'" Project="..\..\share\Toolkit.Authentication.JwtBearer\Toolkit.Authentication.JwtBearer.projitems" Label="Shared" />
   <Choose>
     <When Condition="'$(TargetFramework)' == 'net8.0'">
       <ItemGroup>
@@ -46,13 +44,11 @@
   <Import Project="..\..\share\Toolkit.Repository.Abstractions\Toolkit.Repository.Abstractions.projitems" Label="Shared" />
 
   <!-- Import Project: Toolkit.Repository.EntityFramework -->
-  <Import Condition="$(TargetFramework.StartsWith('netstandard')) == 'false'"
-          Project="..\..\share\Toolkit.Repository.EntityFramework\Toolkit.Repository.EntityFramework.projitems"
-          Label="Shared" />
+  <Import Condition="$(TargetFramework.StartsWith('netstandard')) == 'false'" Project="..\..\share\Toolkit.Repository.EntityFramework\Toolkit.Repository.EntityFramework.projitems" Label="Shared" />
   <Choose>
     <When Condition="'$(TargetFramework)' == 'net8.0'">
       <ItemGroup>
-        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.4"/>
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.4" />
       </ItemGroup>
     </When>
     <When Condition="'$(TargetFramework)' == 'net6.0'">

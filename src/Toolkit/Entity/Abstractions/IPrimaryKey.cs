@@ -1,4 +1,4 @@
-﻿namespace Sharemee.Toolkit.Entity;
+﻿namespace Sharemee.Toolkit.Entity.Abstractions;
 
 /// <summary>
 /// Primary key type: <see cref="int"/>

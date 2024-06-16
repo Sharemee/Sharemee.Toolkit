@@ -1,4 +1,4 @@
-﻿namespace Sharemee.Toolkit.Entity;
+﻿namespace Sharemee.Toolkit.Entity.Abstractions;
 
 /// <summary>
 /// 可用性标识字段接口

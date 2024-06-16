@@ -1,4 +1,4 @@
-﻿namespace Sharemee.Toolkit.Entity;
+﻿namespace Sharemee.Toolkit.Entity.Abstractions;
 
 /// <summary>
 /// 创建时间属性接口

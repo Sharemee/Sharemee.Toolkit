@@ -1,4 +1,4 @@
-﻿namespace Sharemee.Toolkit.Entity;
+﻿namespace Sharemee.Toolkit.Entity.Abstractions;
 
 /// <summary>
 /// 可删除属性接口

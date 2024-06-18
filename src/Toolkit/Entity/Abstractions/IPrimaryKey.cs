@@ -5,17 +5,14 @@
 /// </summary>
 public interface IPrimaryKey
 {
-    /// <summary>
-    /// Primary key
-    /// </summary>
-    int Id { get; set; }
+
 }
 
 /// <summary>
 /// Primary key
 /// </summary>
 /// <typeparam name="TType"></typeparam>
-public interface IPrimaryKey<TType> where TType : IEquatable<TType>
+public interface IPrimaryKey<TType> : IPrimaryKey where TType : IEquatable<TType>
 {
     /// <summary>
     /// Primary key

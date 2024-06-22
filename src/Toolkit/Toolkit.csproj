@@ -10,11 +10,10 @@
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.0" />
   </ItemGroup>
 
-  <ItemGroup>
-    <None Include=".\Http\HttpResult.*.cs">
-      <DependentUpon>.\Http\HttpResult.cs</DependentUpon>
-    </None>
-    <Compile Remove="Http\HttpResultExtensions.cs" Condition="$(TargetFramework.StartsWith('netstandard'))" />
+  <!-- Don't compile on netstandard -->
+  <ItemGroup Condition="$(TargetFramework.StartsWith('netstandard'))">
+    <Compile Remove="Http\HttpResultExtensions.cs"/>
+    <Compile Remove="DatetimeJsonConverter.cs"/>
   </ItemGroup>
 
   <!-- Import Project: Toolkit -->

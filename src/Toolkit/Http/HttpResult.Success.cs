@@ -43,7 +43,7 @@ namespace Sharemee.Toolkit.Http
         /// <param name="data">数据</param>
         /// <returns></returns>
         /// <remarks>调用该函数最好使用参数名称调用, 否则当数据是字符串时可能不会正确调用此函数</remarks>
-        public static HttpResult Success(object data)
+        public static HttpResult Success<T>(T data)
         {
             return Build(DefaultSuccessCode, true, DefaultSuccessMessage, data);
         }

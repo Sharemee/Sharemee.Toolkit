@@ -21,4 +21,12 @@ public interface IRepository<TEntity> : IRepositoryAsync<TEntity> where TEntity 
     /// <param name="id"></param>
     /// <returns></returns>
     TEntity? FindById(long id);
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <returns></returns>
+    IQueryable<TResult> QueryAll<TResult>(Expression<Func<TEntity, TResult>> expression);
+
+    int Count(Expression<Func<TEntity, bool>> where);
 }

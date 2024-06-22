@@ -9,7 +9,6 @@
     <Import_RootNamespace>Toolkit.Repository.EntityFramework</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="$(MSBuildThisFileDirectory)Abstractions\RepositoryBase.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Repository.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ServiceCollectionExtension.cs" />
   </ItemGroup>

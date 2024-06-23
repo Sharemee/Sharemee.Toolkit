@@ -4,18 +4,8 @@
 /// 分页数据模型
 /// </summary>
 /// <typeparam name="T"></typeparam>
-public class PaginationResult<T>
+public class PaginationResult<T> : Pagination, IPagination
 {
-    /// <summary>
-    /// 当前页码
-    /// </summary>
-    public int PageNo { get; set; }
-
-    /// <summary>
-    /// 每页数据容量
-    /// </summary>
-    public int PageSize { get; set; }
-
     /// <summary>
     /// 总页数
     /// </summary>

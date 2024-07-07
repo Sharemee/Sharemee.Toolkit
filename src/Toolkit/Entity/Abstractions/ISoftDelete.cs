@@ -1,9 +1,9 @@
 ﻿namespace Sharemee.Toolkit.Entity.Abstractions;
 
 /// <summary>
-/// 可删除属性接口
+/// 软删除属性接口
 /// </summary>
-public interface IDeleteable
+public interface ISoftDelete
 {
     /// <summary>
     /// 是否已删除

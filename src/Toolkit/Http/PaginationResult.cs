@@ -4,8 +4,26 @@
 /// 分页数据模型
 /// </summary>
 /// <typeparam name="T"></typeparam>
-public class PaginationResult<T> : Pagination, IPagination
+public class PaginationResult<T> : Pagination
 {
+    /// <summary>
+    /// 分页数据模型构造函数
+    /// </summary>
+    public PaginationResult()
+    {
+        
+    }
+
+    /// <summary>
+    /// 分页数据模型构造函数
+    /// </summary>
+    /// <param name="pagination"></param>
+    public PaginationResult(IPagination pagination)
+    {
+        this.PageNo = pagination.PageNo;
+        this.PageSize = pagination.PageSize;
+    }
+
     /// <summary>
     /// 总页数
     /// </summary>

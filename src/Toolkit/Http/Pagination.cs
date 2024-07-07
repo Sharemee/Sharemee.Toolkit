@@ -1,29 +1,24 @@
 ﻿namespace Sharemee.Toolkit.Http;
 
 /// <summary>
-/// 分页模型接口
-/// </summary>
-public interface IPagination
-{
-    /// <summary>
-    /// 当前页码
-    /// </summary>
-    int PageNo { get; set; }
-
-    /// <summary>
-    /// 每页数据容量
-    /// </summary>
-    int PageSize { get; set; }
-}
-
-/// <summary>
 /// 分页模型
 /// </summary>
 public class Pagination : IPagination
 {
-    /// <inheritdoc/>
-    public int PageNo { get; set; }
+    public Pagination()
+    {
+        
+    }
+
+    public Pagination(int pageNo, int pageSize)
+    {
+        this.PageNo = pageNo;
+        this.PageSize = pageSize;
+    }
 
     /// <inheritdoc/>
-    public int PageSize { get; set; }
+    public int PageNo { get; set; } = 1;
+
+    /// <inheritdoc/>
+    public int PageSize { get; set; } = 10;
 }
